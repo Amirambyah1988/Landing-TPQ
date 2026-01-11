@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -59,13 +58,12 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
     <div id="root">
-        <!-- Loader ini akan otomatis dihapus oleh React saat proses render berhasil -->
         <div id="loader">
             <div class="spinner"></div>
             <p style="margin-top: 1rem; color: #64748b; font-weight: 600;">Memuat TPQ Nurul Islam...</p>
         </div>
     </div>
-    <!-- Script utama harus mengarah ke index.tsx tanpa importmap -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- Pastikan tidak ada '/' di depan agar path relatif terhadap root folder -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
