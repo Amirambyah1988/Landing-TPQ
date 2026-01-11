@@ -12,10 +12,10 @@ export default defineConfig({
     port: 3000,
     host: true,
   },
-  // Menyediakan shim yang kuat untuk process.env
   define: {
-    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || ''),
+    // Memastikan process.env tidak kosong dan API_KEY tersedia
     'process.env': {
+      API_KEY: JSON.stringify(process.env.API_KEY || ''),
       NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
     }
   }
