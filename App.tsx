@@ -35,7 +35,6 @@ const App: React.FC = () => {
   const handleLogout = async () => {
     try {
       await auth.signOut();
-      alert('Berhasil keluar.');
     } catch (err) {
       console.error("Logout error:", err);
     }

@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Konfigurasi Firebase dari User
 const firebaseConfig = {
   apiKey: "AIzaSyDckxCsnvtnhWXcELEjZyCSDt-2CeJp1m4",
   authDomain: "tpq-app-c8414.firebaseapp.com",
@@ -14,12 +13,10 @@ const firebaseConfig = {
   appId: "1:296366612660:web:fc19b22c61a89ae0fab7e1"
 };
 
-// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 
-// Export instances
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const googleProvider = new GoogleAuthProvider();
 
-console.log("Firebase initialized successfully for project:", firebaseConfig.projectId);
+console.log("Firebase initialized for Vite project:", firebaseConfig.projectId);
