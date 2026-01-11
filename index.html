@@ -46,25 +46,26 @@
 <script type="importmap">
 {
   "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "firebase/": "https://esm.sh/firebase@^12.7.0/",
     "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
     "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "firebase/": "https://esm.sh/firebase@^12.7.0/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
 <body class="bg-slate-50 text-slate-900">
     <div id="root">
+        <!-- Loader ini akan otomatis dihapus oleh React saat proses render berhasil -->
         <div id="loader">
             <div class="spinner"></div>
             <p style="margin-top: 1rem; color: #64748b; font-weight: 600;">Memuat TPQ Nurul Islam...</p>
         </div>
     </div>
-    <!-- Script utama menggunakan path relatif untuk kompatibilitas build -->
-    <script type="module" src="index.tsx"></script>
+    <!-- Script utama harus mengarah ke index.tsx tanpa importmap -->
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
