@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: './', // Sangat penting untuk GitHub Pages
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -13,10 +13,9 @@ export default defineConfig({
     host: true,
   },
   define: {
-    // Memastikan process.env tidak kosong dan API_KEY tersedia
-    'process.env': {
-      API_KEY: JSON.stringify(process.env.API_KEY || ''),
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
-    }
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || ''),
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+    // Menyediakan objek process global jika diperlukan oleh library pihak ketiga
+    'process.platform': JSON.stringify('browser')
   }
 });

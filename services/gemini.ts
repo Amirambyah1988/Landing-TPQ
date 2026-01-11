@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 
 const SYSTEM_INSTRUCTION = `
@@ -17,6 +16,7 @@ Jika tidak tahu jawabannya, arahkan ke nomor WhatsApp admin: +62 812-3456-7890.
 
 export const getAIResponse = async (userMessage: string) => {
   try {
+    // Inisialisasi tepat sebelum digunakan untuk memastikan API_KEY terbaca
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
